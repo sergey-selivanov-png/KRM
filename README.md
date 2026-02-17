@@ -35,55 +35,31 @@
 ---
 
 ### Задание 2. Memcached
+
 Установите и запустите memcached.
-```
-sudo apt update && apt install memcached
-```
 *Приведите скриншот systemctl status memcached, где будет видно, что memcached запущен.*
 
-![mamcached](https://github.com/joos-net/redis-memcached/blob/main/memcached.jpg)
+## Ответ:
+
+![mamcached](https://github.com/sergey-selivanov-png/KRM/blob/main/image/g1.png)
 
 ---
 
 ### Задание 3. Удаление по TTL в Memcached
+
 Запишите в memcached несколько ключей с любыми именами и значениями, для которых выставлен TTL 5.
-```
-set KEY META_DATA EXPIRY_TIME LENGTH_IN_BYTES
-get KEY
-```
 *Приведите скриншот, на котором видно, что спустя 5 секунд ключи удалились из базы.*
 
-![setget](https://github.com/joos-net/redis-memcached/blob/main/set-get.jpg)
+## Ответ:
+
+![setget](https://github.com/sergey-selivanov-png/KRM/blob/main/image/g2.png)
 
 ### Задание 4. Запись данных в Redis
-Запишите в Redis несколько ключей с любыми именами и значениями.
-```
-sudo apt update && apt install redis
-```
-![Redis](https://github.com/joos-net/redis-memcached/blob/main/redis.jpg)
 
-redis.sh
-```bash
-for key in $(redis-cli -p 6379 keys \*);
-        do echo -n "Key : '$key' - "
-                redis-cli -p 6379 GET $key;
-done
-```
-*Через redis-cli достаньте все записанные ключи и значения из базы, приведите скриншот этой операции.*
-![redis_keys_mget](https://github.com/joos-net/redis-memcached/blob/main/redis_keys_mget.jpg)
+Запишите в Redis несколько ключей с любыми именами и значениями.
+
+## Ответ: 
+
+![Redis](https://github.com/sergey-selivanov-png/KRM/blob/main/image/g3.png)
 
 ---
-## Дополнительные задания (со звездочкой*)
-
-Эти задания дополнительные (не обязательные к выполнению) и никак не повлияют на получение вами зачета по этому домашнему заданию. Вы можете их выполнить, если хотите глубже и/или шире разобраться в материале.
-
-### Задание 5. Работа с числами
-Запишите в Redis ключ key5 со значением типа "int" равным числу 5. Увеличьте его на 5, чтобы в итоге в значении лежало число 10.
-```
-SET key5 5
-incrby key5 5
-GET key5
-```
-*Приведите скриншот, где будут проделаны все операции и будет видно, что значение key5 стало равно 10.*
-
-![redis_incrby](https://github.com/joos-net/redis-memcached/blob/main/redis_incrby.jpg)
